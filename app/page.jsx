@@ -37,7 +37,7 @@ const products = [
     summary:
       "A home for interactive cricket experiences built on real data, with a card game and a product to view stats for your favorite cricketer.",
     details: [
-      { label: "Trump Cards", href: "https://cricket.vishalbuilds.com/trump-cards" },
+      { label: "Trump Cards", href: "https://cricket.vishalbuilds.com/ipl-trump-cards" },
       { label: "Stat Engine", href: "https://cricket.vishalbuilds.com/stat-engine" },
       { label: "Built around cricket data and utility" },
     ],
@@ -214,6 +214,18 @@ export default function HomePage() {
   const [openProducts, setOpenProducts] = useState([]);
   const [updatesOpen, setUpdatesOpen] = useState(true);
 
+  const scrollToProducts = () => {
+    if (typeof window !== "undefined") {
+      document.getElementById("products")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
   }, [dark]);
@@ -236,13 +248,13 @@ export default function HomePage() {
           </a>
           <div className="flex items-center gap-4 sm:gap-6">
             <nav className="hidden items-center gap-6 text-sm sm:flex" style={{ color: "var(--text-secondary)" }}>
-              <a
-                href="#products"
-                onClick={() => setOpenProducts([products[0].name])}
+              <button
+                type="button"
+                onClick={scrollToProducts}
                 className="transition-colors hover:text-[var(--text)]"
               >
                 Products
-              </a>
+              </button>
             </nav>
             <ThemeToggle dark={dark} onToggle={() => setDark((v) => !v)} />
           </div>
@@ -269,17 +281,19 @@ export default function HomePage() {
                 I build products and AI experiments that turn ideas into useful outcomes. This site is where I share what I&apos;m building and learning along the way.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-4">
-                <a
-                  href="#products"
-                  onClick={() => setOpenProducts([products[0].name])}
+                <button
+                  type="button"
+                  onClick={scrollToProducts}
                   className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
                   style={{ background: "var(--accent)" }}
                 >
                   Explore Products
                   <ArrowIcon />
-                </a>
+                </button>
                 <a
                   href="https://about.vishalbuilds.com"
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 hover:text-[var(--text)]"
                   style={{
                     borderColor: "color-mix(in srgb, var(--accent) 38%, var(--border))",
@@ -478,6 +492,8 @@ export default function HomePage() {
                                 ) : (
                                   <a
                                     href={product.href}
+                                    target="_blank"
+                                    rel="noreferrer"
                                     className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white"
                                     style={{ background: product.theme.accent }}
                                   >
@@ -502,6 +518,8 @@ export default function HomePage() {
                                   <a
                                     key={detail.label}
                                     href={detail.href}
+                                    target="_blank"
+                                    rel="noreferrer"
                                     className="group flex items-center justify-between gap-4 border-b pb-3 text-sm font-medium leading-7 transition-colors"
                                     style={{ borderColor: "var(--border)" }}
                                   >
@@ -563,14 +581,14 @@ export default function HomePage() {
           style={{ borderColor: dark ? "var(--border)" : "#3355a6", background: "var(--surface)" }}
         >
           <div className="text-sm" style={{ color: "var(--text-secondary)" }}>
-            <a href="https://www.vishalbuilds.com" className="transition-colors hover:text-[var(--text)]">Home</a>
+            <button type="button" onClick={scrollToTop} className="transition-colors hover:text-[var(--text)]">Home</button>
           </div>
           <div className="text-sm font-medium text-center" style={{ color: "var(--text-secondary)" }}>
             Made by Vishal
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm sm:justify-end" style={{ color: "var(--text-secondary)" }}>
-            <a href="https://github.com/vishalg31">GitHub</a>
-            <a href="https://www.linkedin.com/in/vishalgayakwar/">LinkedIn</a>
+            <a href="https://github.com/vishalg31" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/vishalgayakwar/" target="_blank" rel="noreferrer">LinkedIn</a>
             <a href="mailto:vgvishal31@gmail.com">Email</a>
           </div>
         </div>
