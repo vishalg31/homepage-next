@@ -1,0 +1,17 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "vishalbuilds.com"
+        }
+      ],
+      "destination": "https://www.vishalbuilds.com/$1",
+      "permanent": true
+    }
+  ]
+}
