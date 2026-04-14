@@ -5,6 +5,25 @@ import { useEffect, useState } from "react";
 
 const products = [
   {
+    name: "InvestCore",
+    status: "New",
+    category: "Finance",
+    href: "https://invest.vishalbuilds.com",
+    theme: {
+      glow: "rgba(13, 148, 136, 0.18)",
+      panel: "linear-gradient(135deg, rgba(13, 148, 136, 0.12), rgba(255,255,255,0) 55%)",
+      accent: "#0d9488",
+    },
+    tagline: "See exactly where your money grows best, post-tax.",
+    summary:
+      "Compare every major Indian investment instrument side-by-side — post-tax and inflation-adjusted — or build your own portfolio and see combined returns. FY 2025-26 rules.",
+    details: [
+      { label: "Ranks instruments by real CAGR, gains, and real value" },
+      { label: "Portfolio builder with blended post-tax returns" },
+      { label: "Step-by-step tax breakdown for every instrument" },
+    ],
+  },
+  {
     name: "Tax Finder",
     status: "New",
     category: "Finance",
@@ -346,6 +365,18 @@ export default function HomePage() {
                       <div className="rounded-[24px] border p-4" style={{ borderColor: "var(--border)", background: "var(--surface-soft)" }}>
                         <div className="flex items-start justify-between gap-4">
                           <div>
+                            <div className="text-sm font-semibold sm:text-base">InvestCore</div>
+                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Finance</div>
+                          </div>
+                          <StatusPill>New</StatusPill>
+                        </div>
+                        <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
+                          Compare every major Indian investment instrument post-tax and inflation-adjusted, or build your own portfolio. FY 2025-26 rules.
+                        </p>
+                      </div>
+                      <div className="rounded-[24px] border p-4" style={{ borderColor: "var(--border)", background: "var(--surface-soft)" }}>
+                        <div className="flex items-start justify-between gap-4">
+                          <div>
                             <div className="text-sm font-semibold sm:text-base">Tax Finder</div>
                             <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Finance</div>
                           </div>
@@ -353,12 +384,6 @@ export default function HomePage() {
                         </div>
                         <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
                           FY 2026-27 updates, NRI support, clearer deduction handling, and better share and export polish.
-                        </p>
-                      </div>
-                      <div className="rounded-[24px] border p-4" style={{ borderColor: "var(--border)", background: "var(--surface-soft)" }}>
-                        <div className="text-sm font-semibold">Blog</div>
-                        <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
-                          Coming next week on how I&apos;m building, the planning process, and what I&apos;m learning while shipping.
                         </p>
                       </div>
                     </div>
