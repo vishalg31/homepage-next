@@ -274,6 +274,15 @@ export default function HomePage() {
               >
                 Products
               </button>
+              <a
+                href="https://blog.vishalbuilds.com"
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:opacity-80 font-semibold"
+                style={{ color: "var(--accent)" }}
+              >
+                Blog ✦
+              </a>
             </nav>
             <ThemeToggle dark={dark} onToggle={() => setDark((v) => !v)} />
           </div>
@@ -362,6 +371,26 @@ export default function HomePage() {
                     className="overflow-hidden"
                   >
                     <div className="mt-4 space-y-4">
+                      <motion.a
+                        href="https://blog.vishalbuilds.com"
+                        target="_blank"
+                        rel="noreferrer"
+                        animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(74,11,72,0)", "0 0 18px rgba(74,11,72,0.35)", "0 0 0px rgba(74,11,72,0)"] }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                        className="block rounded-[24px] border p-4"
+                        style={{ borderColor: "rgba(74,11,72,0.5)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(74,11,72,0.15))" }}
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div>
+                            <div className="text-sm font-semibold sm:text-base">Ramble On</div>
+                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Blog · Just launched</div>
+                          </div>
+                          <StatusPill>New</StatusPill>
+                        </div>
+                        <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
+                          My personal blog — musings on building products, cricket, and cinema. Now live at blog.vishalbuilds.com.
+                        </p>
+                      </motion.a>
                       <div className="rounded-[24px] border p-4" style={{ borderColor: "var(--border)", background: "var(--surface-soft)" }}>
                         <div className="flex items-start justify-between gap-4">
                           <div>
@@ -377,13 +406,13 @@ export default function HomePage() {
                       <div className="rounded-[24px] border p-4" style={{ borderColor: "var(--border)", background: "var(--surface-soft)" }}>
                         <div className="flex items-start justify-between gap-4">
                           <div>
-                            <div className="text-sm font-semibold sm:text-base">Tax Finder</div>
-                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Finance</div>
+                            <div className="text-sm font-semibold sm:text-base">Tailor</div>
+                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Career AI</div>
                           </div>
-                          <StatusPill>Updated</StatusPill>
+                          <StatusPill>Upcoming</StatusPill>
                         </div>
                         <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
-                          FY 2026-27 updates, NRI support, clearer deduction handling, and better share and export polish.
+                          Sharper resumes shaped around the jobs you actually want. Refines CVs against job descriptions using AI.
                         </p>
                       </div>
                     </div>
