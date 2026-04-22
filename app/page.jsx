@@ -274,16 +274,16 @@ export default function HomePage() {
               >
                 Products
               </button>
-              <a
-                href="https://blog.vishalbuilds.com"
-                target="_blank"
-                rel="noreferrer"
-                className="transition-colors hover:opacity-80 font-semibold"
-                style={{ color: "var(--accent)" }}
-              >
-                Blog ✦
-              </a>
             </nav>
+            <a
+              href="https://blog.vishalbuilds.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm transition-colors hover:opacity-80 font-semibold"
+              style={{ color: "var(--accent)" }}
+            >
+              Blog ✦
+            </a>
             <ThemeToggle dark={dark} onToggle={() => setDark((v) => !v)} />
           </div>
         </div>
