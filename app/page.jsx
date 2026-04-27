@@ -5,6 +5,25 @@ import { useEffect, useState } from "react";
 
 const products = [
   {
+    name: "Tailor",
+    status: "New",
+    category: "Career AI",
+    href: "https://tailor.vishalbuilds.com",
+    theme: {
+      glow: "rgba(16, 185, 129, 0.18)",
+      panel: "linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(255,255,255,0) 55%)",
+      accent: "#0f9f6e",
+    },
+    tagline: "ATS-ready CV tailored to any job in 60 seconds.",
+    summary:
+      "Paste a job description. Get an ATS-optimised CV with rewritten bullets, a match score, and a one-click PDF export. Your data never leaves your browser.",
+    details: [
+      { label: "ATS scoring against real job descriptions" },
+      { label: "Word-level diff with before/after view" },
+      { label: "PDF export — zero data stored" },
+    ],
+  },
+  {
     name: "InvestCore",
     status: "New",
     category: "Finance",
@@ -25,7 +44,7 @@ const products = [
   },
   {
     name: "Tax Finder",
-    status: "New",
+    status: "Live",
     category: "Finance",
     href: "https://tax.vishalbuilds.com",
     theme: {
@@ -78,25 +97,6 @@ const products = [
       { label: "Real-time updates" },
       { label: "Severe and extreme alerts" },
       { label: "Easy to use" },
-    ],
-  },
-  {
-    name: "Tailor",
-    status: "Upcoming",
-    category: "Career AI",
-    href: "#",
-    theme: {
-      glow: "rgba(16, 185, 129, 0.18)",
-      panel: "linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(255,255,255,0) 55%)",
-      accent: "#0f9f6e",
-    },
-    tagline: "Sharper resumes shaped around the jobs you actually want.",
-    summary:
-      "A product to refine CVs based on job descriptions using AI, helping applications feel more targeted, structured, and useful.",
-    details: [
-      { label: "Refines CVs against job descriptions using AI" },
-      { label: "Built for more targeted applications" },
-      { label: "Upcoming product in the lab" },
     ],
   },
   {
@@ -306,7 +306,7 @@ export default function HomePage() {
                 Experiments in AI, data, and automation.
               </div>
               <p className="mt-6 max-w-[650px] text-lg leading-8" style={{ color: "var(--text-secondary)" }}>
-                I build products and AI experiments that turn ideas into useful outcomes. This site is where I share what I&apos;m building and learning along the way.
+                I build products for daily use, lifestyle, and fun. This site is where I share what I&apos;m building and learning along the way.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <button
@@ -372,11 +372,31 @@ export default function HomePage() {
                   >
                     <div className="mt-4 space-y-4">
                       <motion.a
+                        href="https://tailor.vishalbuilds.com"
+                        target="_blank"
+                        rel="noreferrer"
+                        animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(16,185,129,0)", "0 0 18px rgba(16,185,129,0.32)", "0 0 0px rgba(16,185,129,0)"] }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                        className="block rounded-[24px] border p-4"
+                        style={{ borderColor: "rgba(16,185,129,0.45)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(16,185,129,0.12))" }}
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div>
+                            <div className="text-sm font-semibold sm:text-base">Tailor</div>
+                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Career AI · Just launched</div>
+                          </div>
+                          <StatusPill>New</StatusPill>
+                        </div>
+                        <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
+                          ATS-ready CV tailored to any job in 60 seconds. Paste a job description, get rewritten bullets, a match score, and a PDF. Your data never leaves your browser.
+                        </p>
+                      </motion.a>
+                      <motion.a
                         href="https://blog.vishalbuilds.com"
                         target="_blank"
                         rel="noreferrer"
                         animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(74,11,72,0)", "0 0 18px rgba(74,11,72,0.35)", "0 0 0px rgba(74,11,72,0)"] }}
-                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 1.4 }}
                         className="block rounded-[24px] border p-4"
                         style={{ borderColor: "rgba(74,11,72,0.5)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(74,11,72,0.15))" }}
                       >
@@ -401,18 +421,6 @@ export default function HomePage() {
                         </div>
                         <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
                           Compare every major Indian investment instrument post-tax and inflation-adjusted, or build your own portfolio. FY 2025-26 rules.
-                        </p>
-                      </div>
-                      <div className="rounded-[24px] border p-4" style={{ borderColor: "var(--border)", background: "var(--surface-soft)" }}>
-                        <div className="flex items-start justify-between gap-4">
-                          <div>
-                            <div className="text-sm font-semibold sm:text-base">Tailor</div>
-                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Career AI</div>
-                          </div>
-                          <StatusPill>Upcoming</StatusPill>
-                        </div>
-                        <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
-                          Sharper resumes shaped around the jobs you actually want. Refines CVs against job descriptions using AI.
                         </p>
                       </div>
                     </div>
