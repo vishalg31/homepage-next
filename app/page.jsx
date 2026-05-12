@@ -33,13 +33,13 @@ const products = [
       panel: "linear-gradient(135deg, rgba(13, 148, 136, 0.12), rgba(255,255,255,0) 55%)",
       accent: "#0d9488",
     },
-    tagline: "See exactly where your money grows best, post-tax.",
+    tagline: "See exactly what your investments will be worth, post-tax.",
     summary:
-      "Compare every major Indian investment instrument side-by-side — post-tax and inflation-adjusted — or build your own portfolio and see combined returns. FY 2025-26 rules.",
+      "Compare every major Indian investment instrument post-tax and inflation-adjusted, build a portfolio, or track your actual holdings and see the real projected value of what you own. FY 2025-26 rules.",
     details: [
-      { label: "Ranks instruments by real CAGR, gains, and real value" },
-      { label: "Portfolio builder with blended post-tax returns" },
-      { label: "Step-by-step tax breakdown for every instrument" },
+      { label: "My Portfolio: track real holdings with per-instrument tax treatment" },
+      { label: "Add more money per holding — lump sum or SIP — and model the impact" },
+      { label: "Step-by-step tax breakdown for every instrument and your full portfolio" },
     ],
   },
   {
@@ -372,11 +372,31 @@ export default function HomePage() {
                   >
                     <div className="mt-4 space-y-4">
                       <motion.a
+                        href="https://invest.vishalbuilds.com"
+                        target="_blank"
+                        rel="noreferrer"
+                        animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(13,148,136,0)", "0 0 18px rgba(13,148,136,0.32)", "0 0 0px rgba(13,148,136,0)"] }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                        className="block rounded-[24px] border p-4"
+                        style={{ borderColor: "rgba(13,148,136,0.45)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(13,148,136,0.12))" }}
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div>
+                            <div className="text-sm font-semibold sm:text-base">InvestCore</div>
+                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Finance · Updated</div>
+                          </div>
+                          <StatusPill>New</StatusPill>
+                        </div>
+                        <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
+                          Now with My Portfolio — track your actual holdings, see post-tax projected value per instrument, model adding more money, and get a full tax breakdown across your portfolio.
+                        </p>
+                      </motion.a>
+                      <motion.a
                         href="https://tailor.vishalbuilds.com"
                         target="_blank"
                         rel="noreferrer"
                         animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(16,185,129,0)", "0 0 18px rgba(16,185,129,0.32)", "0 0 0px rgba(16,185,129,0)"] }}
-                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
                         className="block rounded-[24px] border p-4"
                         style={{ borderColor: "rgba(16,185,129,0.45)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(16,185,129,0.12))" }}
                       >
@@ -396,7 +416,7 @@ export default function HomePage() {
                         target="_blank"
                         rel="noreferrer"
                         animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(74,11,72,0)", "0 0 18px rgba(74,11,72,0.35)", "0 0 0px rgba(74,11,72,0)"] }}
-                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 1.4 }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
                         className="block rounded-[24px] border p-4"
                         style={{ borderColor: "rgba(74,11,72,0.5)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(74,11,72,0.15))" }}
                       >
@@ -411,18 +431,6 @@ export default function HomePage() {
                           My personal blog — musings on building products, cricket, and cinema. Now live at blog.vishalbuilds.com.
                         </p>
                       </motion.a>
-                      <div className="rounded-[24px] border p-4" style={{ borderColor: "var(--border)", background: "var(--surface-soft)" }}>
-                        <div className="flex items-start justify-between gap-4">
-                          <div>
-                            <div className="text-sm font-semibold sm:text-base">InvestCore</div>
-                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Finance</div>
-                          </div>
-                          <StatusPill>New</StatusPill>
-                        </div>
-                        <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
-                          Compare every major Indian investment instrument post-tax and inflation-adjusted, or build your own portfolio. FY 2025-26 rules.
-                        </p>
-                      </div>
                     </div>
                   </motion.div>
                 ) : null}
