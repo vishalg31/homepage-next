@@ -5,8 +5,27 @@ import { useEffect, useState } from "react";
 
 const products = [
   {
-    name: "Dak",
+    name: "Echoes",
     status: "New",
+    category: "Music Discovery",
+    href: "https://echoes.vishalbuilds.com",
+    theme: {
+      glow: "rgba(180, 70, 160, 0.18)",
+      panel: "linear-gradient(135deg, rgba(168, 53, 154, 0.14), rgba(255,255,255,0) 55%)",
+      accent: "#a8359a",
+    },
+    tagline: "A music discovery game shaped entirely by your taste.",
+    summary:
+      "Answer a few quick questions and Echoes builds you a world of music to explore. Chase a song's vibe across artists, or dig into one artist's deep cuts and best-known tracks. Every page is art-led and shifts colour with whatever is playing.",
+    details: [
+      { label: "Two ways to play: Taste Match and Artist Deep Dive" },
+      { label: "Album-art colours theme every page as you listen" },
+      { label: "A taste profile that grows with what you discover" },
+    ],
+  },
+  {
+    name: "Dak",
+    status: "Live",
     category: "Productivity",
     href: "https://dak.vishalbuilds.com",
     theme: {
@@ -25,7 +44,7 @@ const products = [
   },
   {
     name: "Tailor",
-    status: "New",
+    status: "Live",
     category: "Career AI",
     href: "https://tailor.vishalbuilds.com",
     theme: {
@@ -391,20 +410,40 @@ export default function HomePage() {
                   >
                     <div className="mt-4 space-y-4">
                       <motion.a
+                        href="https://echoes.vishalbuilds.com"
+                        target="_blank"
+                        rel="noreferrer"
+                        animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(168,53,154,0)", "0 0 18px rgba(168,53,154,0.32)", "0 0 0px rgba(168,53,154,0)"] }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                        className="block rounded-[24px] border p-4"
+                        style={{ borderColor: "rgba(168,53,154,0.45)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(168,53,154,0.12))" }}
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div>
+                            <div className="text-sm font-semibold sm:text-base">Echoes</div>
+                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Music Discovery · Just launched</div>
+                          </div>
+                          <StatusPill>New</StatusPill>
+                        </div>
+                        <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
+                          A music discovery game shaped by your taste. Answer a few questions, then chase a track across artists or dig into a single artist for deep cuts. Every page reacts to the music playing.
+                        </p>
+                      </motion.a>
+                      <motion.a
                         href="https://dak.vishalbuilds.com"
                         target="_blank"
                         rel="noreferrer"
                         animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(255,153,0,0)", "0 0 18px rgba(255,153,0,0.30)", "0 0 0px rgba(255,153,0,0)"] }}
-                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
                         className="block rounded-[24px] border p-4"
                         style={{ borderColor: "rgba(200,120,0,0.45)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(10,61,98,0.10))" }}
                       >
                         <div className="flex items-start justify-between gap-4">
                           <div>
                             <div className="text-sm font-semibold sm:text-base">Dak</div>
-                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Productivity · Just launched</div>
+                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Productivity · Live</div>
                           </div>
-                          <StatusPill>New</StatusPill>
+                          <StatusPill>Live</StatusPill>
                         </div>
                         <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
                           Paste your raw content, pick a template, and export Outlook-ready PNG images in seconds. Built for teams sending weekly updates, launch emails, and progress reports.
@@ -415,7 +454,7 @@ export default function HomePage() {
                         target="_blank"
                         rel="noreferrer"
                         animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(13,148,136,0)", "0 0 18px rgba(13,148,136,0.32)", "0 0 0px rgba(13,148,136,0)"] }}
-                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
                         className="block rounded-[24px] border p-4"
                         style={{ borderColor: "rgba(13,148,136,0.45)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(13,148,136,0.12))" }}
                       >
@@ -427,27 +466,7 @@ export default function HomePage() {
                           <StatusPill>New</StatusPill>
                         </div>
                         <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
-                          Now with My Portfolio — track your actual holdings, see post-tax projected value per instrument, model adding more money, and get a full tax breakdown across your portfolio.
-                        </p>
-                      </motion.a>
-                      <motion.a
-                        href="https://tailor.vishalbuilds.com"
-                        target="_blank"
-                        rel="noreferrer"
-                        animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(16,185,129,0)", "0 0 18px rgba(16,185,129,0.32)", "0 0 0px rgba(16,185,129,0)"] }}
-                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
-                        className="block rounded-[24px] border p-4"
-                        style={{ borderColor: "rgba(16,185,129,0.45)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(16,185,129,0.12))" }}
-                      >
-                        <div className="flex items-start justify-between gap-4">
-                          <div>
-                            <div className="text-sm font-semibold sm:text-base">Tailor</div>
-                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Career AI · Just launched</div>
-                          </div>
-                          <StatusPill>New</StatusPill>
-                        </div>
-                        <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
-                          ATS-ready CV tailored to any job in 60 seconds. Paste a job description, get rewritten bullets, a match score, and a PDF. Your data never leaves your browser.
+                          Now with My Portfolio: track your actual holdings, see post-tax projected value per instrument, model adding more money, and get a full tax breakdown across your portfolio.
                         </p>
                       </motion.a>
                     </div>
