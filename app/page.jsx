@@ -5,6 +5,25 @@ import { useEffect, useState } from "react";
 
 const products = [
   {
+    name: "Product Interview QnA",
+    status: "New",
+    category: "Interview Prep",
+    href: "https://interview.vishalbuilds.com",
+    theme: {
+      glow: "rgba(79, 70, 229, 0.16)",
+      panel: "linear-gradient(135deg, rgba(79, 70, 229, 0.12), rgba(255,255,255,0) 55%)",
+      accent: "#4f46e5",
+    },
+    tagline: "Fully-worked product interview answers. Read, or listen.",
+    summary:
+      "A library of worked product and product-strategy interview answers. Each one structures the problem, reasons out loud, makes real tradeoffs, and holds up under pushback. Read them, or listen with built-in narration.",
+    details: [
+      { label: "Worked answers across all 9 product and strategy question types" },
+      { label: "Read or listen: narration with a draggable play bar" },
+      { label: "An S&O method guide, plus the framework behind every answer" },
+    ],
+  },
+  {
     name: "Echoes",
     status: "New",
     category: "Music Discovery",
@@ -63,7 +82,7 @@ const products = [
   },
   {
     name: "InvestCore",
-    status: "New",
+    status: "Live",
     category: "Finance",
     href: "https://invest.vishalbuilds.com",
     theme: {
@@ -410,11 +429,31 @@ export default function HomePage() {
                   >
                     <div className="mt-4 space-y-4">
                       <motion.a
+                        href="https://interview.vishalbuilds.com"
+                        target="_blank"
+                        rel="noreferrer"
+                        animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(79,70,229,0)", "0 0 18px rgba(79,70,229,0.32)", "0 0 0px rgba(79,70,229,0)"] }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                        className="block rounded-[24px] border p-4"
+                        style={{ borderColor: "rgba(79,70,229,0.45)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(79,70,229,0.12))" }}
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div>
+                            <div className="text-sm font-semibold sm:text-base">Product Interview QnA</div>
+                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Interview Prep · Just launched</div>
+                          </div>
+                          <StatusPill>New</StatusPill>
+                        </div>
+                        <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
+                          A library of fully-worked product and strategy interview answers. Each one structures the problem, reasons out loud, makes real tradeoffs, and holds up under pushback. Read them, or listen.
+                        </p>
+                      </motion.a>
+                      <motion.a
                         href="https://echoes.vishalbuilds.com"
                         target="_blank"
                         rel="noreferrer"
                         animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(168,53,154,0)", "0 0 18px rgba(168,53,154,0.32)", "0 0 0px rgba(168,53,154,0)"] }}
-                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
                         className="block rounded-[24px] border p-4"
                         style={{ borderColor: "rgba(168,53,154,0.45)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(168,53,154,0.12))" }}
                       >
@@ -434,7 +473,7 @@ export default function HomePage() {
                         target="_blank"
                         rel="noreferrer"
                         animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(255,153,0,0)", "0 0 18px rgba(255,153,0,0.30)", "0 0 0px rgba(255,153,0,0)"] }}
-                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
                         className="block rounded-[24px] border p-4"
                         style={{ borderColor: "rgba(200,120,0,0.45)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(10,61,98,0.10))" }}
                       >
@@ -447,26 +486,6 @@ export default function HomePage() {
                         </div>
                         <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
                           Paste your raw content, pick a template, and export Outlook-ready PNG images in seconds. Built for teams sending weekly updates, launch emails, and progress reports.
-                        </p>
-                      </motion.a>
-                      <motion.a
-                        href="https://invest.vishalbuilds.com"
-                        target="_blank"
-                        rel="noreferrer"
-                        animate={{ scale: [1, 1.025, 1], boxShadow: ["0 0 0px rgba(13,148,136,0)", "0 0 18px rgba(13,148,136,0.32)", "0 0 0px rgba(13,148,136,0)"] }}
-                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
-                        className="block rounded-[24px] border p-4"
-                        style={{ borderColor: "rgba(13,148,136,0.45)", background: "color-mix(in srgb, var(--surface-soft) 85%, rgba(13,148,136,0.12))" }}
-                      >
-                        <div className="flex items-start justify-between gap-4">
-                          <div>
-                            <div className="text-sm font-semibold sm:text-base">InvestCore</div>
-                            <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Finance · Updated</div>
-                          </div>
-                          <StatusPill>New</StatusPill>
-                        </div>
-                        <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-secondary)" }}>
-                          Now with My Portfolio: track your actual holdings, see post-tax projected value per instrument, model adding more money, and get a full tax breakdown across your portfolio.
                         </p>
                       </motion.a>
                     </div>
