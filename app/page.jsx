@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const products = [
   {
-    name: "Product Interview QnA",
+    name: "Product Interview Q&A",
     status: "New",
     category: "Interview Prep",
     href: "https://interview.vishalbuilds.com",
@@ -439,7 +439,7 @@ export default function HomePage() {
                       >
                         <div className="flex items-start justify-between gap-4">
                           <div>
-                            <div className="text-sm font-semibold sm:text-base">Product Interview QnA</div>
+                            <div className="text-sm font-semibold sm:text-base">Product Interview Q&A</div>
                             <div className="mt-1 text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>Interview Prep · Just launched</div>
                           </div>
                           <StatusPill>New</StatusPill>
